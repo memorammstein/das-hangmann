@@ -12,8 +12,7 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case types.INIT_GAME:
-      Object.assign({}, state, action.payload);
-      break;
+      return Object.assign({}, state, action.payload);
     default:
       return state;
   }
