@@ -1,12 +1,19 @@
 import React from 'react';
+import { connect } from "react-redux";
 import './App.css';
+import InitialScreen from './InitialScreen';
+import GameScreen from './GameScreen';
 
-function App() {
-  return (
-    <div className="App">
-      DAS HANGMANN - the game
-    </div>
-  );
-}
+const mapStateToProps = state => ({ inProgress: state.inProgress });
+
+const ConnectedApp = ({ inProgress }) => {
+  if (inProgress) {
+    return <GameScreen />;
+  } else {
+    return <InitialScreen />;
+  }
+};
+
+const App = connect(mapStateToProps)(ConnectedApp);
 
 export default App;
