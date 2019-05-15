@@ -1,7 +1,7 @@
 import types from '../action-types';
 
 const initialState = {
-  in_progress: false,
+  inProgress: false,
   word: '',
   opportunities: 7,
   mistakes: [],
@@ -34,15 +34,15 @@ function guessLetter(state, letter) {
       }
     }
     if (hasWon) {
-      partialState.in_progress = false;
+      partialState.inProgress = false;
     }
   } else {
     partialState.mistakes = state.mistakes.concat(letter);
     if (partialState.mistakes.length === state.opportunities) {
-      partialState.in_progress = false;
+      partialState.inProgress = false;
     }
   }
-  if (partialState.in_progress === false) {
+  if (partialState.inProgress === false) {
     partialState.history = state.history.concat({
       word: state.word,
       mistakes: state.mistakes,
