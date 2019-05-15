@@ -1,5 +1,7 @@
 # DAS HANGMANN
 
+## create-reat-app
+
 The seed for this project is `create-react-app`. In the project directory, you can run:
 
 ### `npm start`
@@ -17,3 +19,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+## structure
+
+`./hangman` should contain the game logic.
+`./components` should contain components for presentation.
