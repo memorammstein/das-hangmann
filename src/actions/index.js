@@ -11,3 +11,7 @@ export function initGame({ level }) {
   payload.word = getRandomWords({ exactly: level || 1, join: ' ' });
   return { type: types.INIT_GAME, payload };
 }
+
+export function guessLetter({ letter }) {
+  return { types: types.GUESS_LETTER, payload: { letter } }
+}
