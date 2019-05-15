@@ -3,7 +3,7 @@ import types from '../action-types';
 const initialState = {
   in_progress: false,
   word: '',
-  opportunities: 0,
+  opportunities: 7,
   mistakes: [],
   hits: [],
   history: []
