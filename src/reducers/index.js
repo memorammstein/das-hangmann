@@ -2,7 +2,10 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    default:
+      return state;
+  }
 };
 
 export default rootReducer;
