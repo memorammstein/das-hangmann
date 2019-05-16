@@ -13,5 +13,5 @@ export function initGame({ level }) {
 }
 
 export function guessLetter({ letter }) {
-  return { types: types.GUESS_LETTER, payload: { letter } }
+  return { type: types.GUESS_LETTER, payload: { letter } }
 }
