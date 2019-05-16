@@ -1,6 +1,6 @@
 # DAS HANGMANN
 
-## create-reat-app
+## create-react-app
 
 The seed for this project is `create-react-app`. In the project directory, you can run:
 
