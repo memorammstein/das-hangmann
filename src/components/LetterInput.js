@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LetterInput.css';
 
 const validOptions = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -24,7 +25,7 @@ const LetterInput = () => {
   );
 
   return (
-    <div>
+    <div className="letter-input">
       <form onSubmit={handleSubmit}>
         <label>
           Select your letter:
