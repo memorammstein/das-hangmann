@@ -3,13 +3,21 @@ import { connect } from 'react-redux';
 import { initGame } from '../actions';
 import './InitialScreen.css';
 
+const mapStateToProps = state => ({
+  history: state.history
+});
+
 const mapDispatchToProps = dispatch => ({
   initGame: options => { dispatch(initGame(options || {})) }
 });
 
-const ConnectedInitialScreen = ({ initGame }) => {
+const ConnectedInitialScreen = ({ initGame, history }) => {
   const handleStartButtonClick = event => {
     initGame();
+  };
+
+  const handleHistoryButtonClick = event => {
+    window.alert('Your history:\n\n' + JSON.stringify(history, null, 4));
   };
 
   return (
@@ -20,12 +28,12 @@ const ConnectedInitialScreen = ({ initGame }) => {
       </div>
       <div>
         <button onClick={handleStartButtonClick}>START</button>
-        <button>HISTORY</button>
+        <button onClick={handleHistoryButtonClick}>HISTORY</button>
       </div>
     </div>
   );
 };
 
-const InitialScreen = connect(null, mapDispatchToProps)(ConnectedInitialScreen);
+const InitialScreen = connect(mapStateToProps, mapDispatchToProps)(ConnectedInitialScreen);
 
 export default InitialScreen;
