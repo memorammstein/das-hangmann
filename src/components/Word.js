@@ -7,15 +7,15 @@ const mapStateToProps = state => ({
 });
 
 const ConnectedWord = ({ word, hits }) => {
-  const letters = word.split('').map(letter => {
+  const letters = word.split('').map((letter, index) => {
     if (letter.match(/[a-z]/i) && hits.includes(letter)) {
-      return <span>{letter}</span>;
+      return <span key={index}>{letter}</span>;
     } else {
-      return <span>&nbsp;</span>;
+      return <span key={index}>&nbsp;</span>;
     }
   });
   return (
-    <div>
+    <div className="word">
       {letters}
     </div>
   );
