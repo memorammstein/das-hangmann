@@ -2,7 +2,7 @@ import types from '../action-types';
 
 const initialState = {
   status: '',
-  word: 'lumberjackass',
+  word: '',
   opportunities: 7,
   mistakes: [],
   hits: [],
