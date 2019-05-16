@@ -3,7 +3,7 @@ import getRandomWords from 'random-words';
 
 export function initGame({ level }) {
   const payload = {
-    inProgress: true,
+    status: 'ongoing',
     word: '',
     mistakes: [],
     hits: []

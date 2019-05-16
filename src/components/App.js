@@ -4,13 +4,16 @@ import './App.css';
 import InitialScreen from './InitialScreen';
 import GameScreen from './GameScreen';
 
-const mapStateToProps = state => ({ inProgress: state.inProgress });
+const mapStateToProps = state => ({ status: state.status });
 
-const ConnectedApp = ({ inProgress }) => {
-  if (inProgress) {
-    return <GameScreen />;
-  } else {
-    return <InitialScreen />;
+const ConnectedApp = ({ status }) => {
+  switch (status) {
+    case 'ongoing':
+      return <GameScreen />;
+    case 'won':
+    case 'lost':
+    default:
+      return <InitialScreen />;
   }
 };
 
