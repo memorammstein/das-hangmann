@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { initGame } from '../actions';
+import './InitialScreen.css';
 
 const mapDispatchToProps = dispatch => ({
   initGame: options => { dispatch(initGame(options || {})) }
@@ -12,7 +13,7 @@ const ConnectedInitialScreen = ({ initGame }) => {
   };
 
   return (
-    <div className="initialScreen">
+    <div className="initial-screen">
       <div className="cover">
         <h1>DAS HANGMANN</h1>
         <h2>the best game I was able to make in a day</h2>
