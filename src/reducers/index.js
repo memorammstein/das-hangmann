@@ -29,7 +29,7 @@ function guessLetter(state, letter) {
     let hasWon = true;
     const wordSet = new Set(state.word);
     for (const letter of wordSet) {
-      if (letter.match(/[a-z]/i) && state.hits.includes(letter) === false) {
+      if (letter.match(/[a-z]/i) && partialState.hits.includes(letter) === false) {
         hasWon = false;
       }
     }
@@ -42,7 +42,7 @@ function guessLetter(state, letter) {
       partialState.status = 'lost';
     }
   }
-  if (partialState.status !== 'ongoing') {
+  if (partialState.status === 'won' || partialState.status === 'lost') {
     partialState.history = state.history.concat({
       word: state.word,
       mistakes: state.mistakes,
