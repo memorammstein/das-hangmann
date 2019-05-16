@@ -1,0 +1,20 @@
+.mistakes-container {
+  color: #990000;
+  margin: 2rem 1rem;
+}
+
+.mistakes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid #990000;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.mistakes > span {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-bottom: 1px solid #990000;
+}
