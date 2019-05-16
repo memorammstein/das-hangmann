@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Word.css';
 
 const mapStateToProps = state => ({
   word: state.word,
@@ -8,10 +9,10 @@ const mapStateToProps = state => ({
 
 const ConnectedWord = ({ word, hits }) => {
   const letters = word.split('').map((letter, index) => {
-    if (letter.match(/[a-z]/i) && hits.includes(letter)) {
-      return <span key={index}>{letter}</span>;
+    if (letter.match(/[a-z]/i)) {
+      return <span className="hint" key={index}>{hits.includes(letter) ? letter : null}</span>;
     } else {
-      return <span key={index}>&nbsp;</span>;
+      return <span key={index}>{letter}</span>;
     }
   });
   return (
