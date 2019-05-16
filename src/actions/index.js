@@ -12,6 +12,6 @@ export function initGame({ level }) {
   return { type: types.INIT_GAME, payload };
 }
 
-export function guessLetter({ letter }) {
+export function guessLetter(letter) {
   return { type: types.GUESS_LETTER, payload: { letter } }
 }
