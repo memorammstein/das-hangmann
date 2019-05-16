@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LetterInput.css';
 
-const validOptions = 'abcdefghijklmnopqrstuvwxyz';
+const VALID_OPTIONS = 'abcdefghijklmnopqrstuvwxyz';
 
 const LetterInput = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -14,7 +14,7 @@ const LetterInput = () => {
     event.preventDefault();
   };
 
-  const options = validOptions.split('').map((option, index) => (
+  const options = VALID_OPTIONS.split('').map((option, index) => (
     <option value={option} key={index}>{option}</option>
   ));
   const selectLetter = (
