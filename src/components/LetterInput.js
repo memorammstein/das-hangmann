@@ -6,7 +6,7 @@ import './LetterInput.css';
 const VALID_OPTIONS = 'abcdefghijklmnopqrstuvwxyz';
 
 const mapDispatchToProps = dispatch => ({
-  guessLetter: letter => dispatch(guessLetter(letter))
+  guessLetter: letter => { dispatch(guessLetter(letter)); }
 });
 
 const ConnectedLetterInput = ({ guessLetter }) => {
@@ -24,6 +24,7 @@ const ConnectedLetterInput = ({ guessLetter }) => {
   const options = VALID_OPTIONS.split('').map((option, index) => (
     <option value={option} key={index}>{option}</option>
   ));
+
   const selectLetter = (
     <select value={selectedOption} onChange={handleSelectChange}>
       <option value="" disabled>select something</option>
