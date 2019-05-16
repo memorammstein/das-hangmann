@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { guessLetter } from '../actions';
 import './LetterInput.css';
 
 const VALID_OPTIONS = 'abcdefghijklmnopqrstuvwxyz';
 
-const LetterInput = () => {
+const mapDispatchToProps = dispatch => ({
+  guessLetter: letter => dispatch(guessLetter(letter))
+});
+
+const ConnectedLetterInput = ({ guessLetter }) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleSelectChange = event => {
@@ -12,6 +18,7 @@ const LetterInput = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    guessLetter(selectedOption);
   };
 
   const options = VALID_OPTIONS.split('').map((option, index) => (
@@ -36,5 +43,7 @@ const LetterInput = () => {
     </div>
   );
 };
+
+const LetterInput = connect(null, mapDispatchToProps)(ConnectedLetterInput);
 
 export default LetterInput;
