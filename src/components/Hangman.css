@@ -1,12 +1,4 @@
 .hangman {
-  padding: 0.5rem 1rem;
-}
-
-.hangman.dead {
-  background: #990000;
-  color: #eeeeee;
-}
-
-.hangman.not-dead {
   background: #eeeeee;
+  padding: 0.5rem 1rem;
 }

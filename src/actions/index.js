@@ -15,3 +15,12 @@ export function initGame({ level }) {
 export function guessLetter(letter) {
   return { type: types.GUESS_LETTER, payload: { letter } }
 }
+
+export function reset() {
+  return { type: types.INIT_GAME, payload: {
+    status: '',
+    word: '',
+    mistakes: [],
+    hits: []
+  } };
+}

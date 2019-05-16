@@ -8,21 +8,13 @@ const mapStateToProps = state => ({
 });
 
 const ConnectedHangman = ({ numberOfMistakes, opportunities }) => {
-  const notDeadView = (
-    <div className="hangman not-dead">
+  return (
+    <div className="hangman">
       <span>chances left for you: <strong>{opportunities - numberOfMistakes}</strong></span>
       <br />
       <span>get it right or start saying bye-bye</span>
     </div>
   );
-  const deadView = (
-    <div className="hangman dead">
-      <span>You're dead my friend</span>
-      <br />
-      <span>¯\_(ツ)_/¯</span>
-    </div>
-  );
-  return numberOfMistakes === opportunities ? deadView : notDeadView;
 };
 
 const Hangman = connect(mapStateToProps)(ConnectedHangman);
