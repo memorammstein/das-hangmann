@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 const ConnectedWord = ({ word, hits }) => {
   const letters = word.split('').map(letter => {
-    if (letter.match(/[a-z]/i) && hits.include(letter)) {
+    if (letter.match(/[a-z]/i) && hits.includes(letter)) {
       return <span>{letter}</span>;
     } else {
       return <span>&nbsp;</span>;
